@@ -19,7 +19,7 @@ export default function ImageSlider(props) {
                             {/* import.meta.url is a native ESM feature that exposes the current module's URL  */}
                             <Image
                                 className="d-block w-100"
-                                src={new URL('../assets/images/' + item.fileName, import.meta.url).href}
+                                src={`/src/assets/images/${item.fileName}`}
                                 alt={`Loading-${index}...`}
                                 style={{ maxHeight: "607px"}}
                             />
