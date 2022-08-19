@@ -5,7 +5,7 @@ import {useTheme, PAGE_THEMES} from '../../../utils/ThemeProvider';
 
 export default function Theme(){
 
-    const codeFilePath =  new URL('/uploads/hooks/Theme.zip', import.meta.url).href;
+    const codeFilePath =  new URL('../../../uploads/hooks/Theme.zip', import.meta.url).href;
     
     const {setTheme}   = useTheme();
     const clickHandler = (newTheme) => setTheme(newTheme);

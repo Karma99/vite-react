@@ -17,7 +17,7 @@ export default class Toggle extends React.Component{
     }
     
     render() {
-        const codeFilePath = new URL("/uploads/class-components/Toggle.txt", import.meta.url).href;
+        const codeFilePath = new URL("../../../uploads/class-components/Toggle.txt", import.meta.url).href;
 
         return (
             <ExampleBody codeFilePath={codeFilePath}>                      

@@ -25,7 +25,7 @@ export default class Counter extends React.Component {
   
     render() {
       console.log('Render: '+2);
-      const codeFilePath = new URL("/uploads/class-components/Counter.txt", import.meta.url).href;
+      const codeFilePath = new URL("../../../uploads/class-components/Counter.txt", import.meta.url).href;
       
       return (
         <ExampleBody codeFilePath={codeFilePath}>

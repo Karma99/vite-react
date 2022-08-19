@@ -29,7 +29,7 @@ export default class Login extends React.Component{
     }
     
     render(){
-        const codeFilePath = new URL("/uploads/class-components/Login.txt", import.meta.url).href;
+        const codeFilePath = new URL("../../../uploads/class-components/Login.txt", import.meta.url).href;
 
         return (
             <ExampleBody codeFilePath={codeFilePath}>

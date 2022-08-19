@@ -4,7 +4,7 @@ import ExampleBody from '../../../utils/ExampleBody';
 
 export default function Counter() {
    
-  const codeFilePath = new URL("/uploads/hooks/Counter.txt", import.meta.url).href;
+  const codeFilePath = new URL("../../../uploads/hooks/Counter.txt", import.meta.url).href;
  
   // Declare a new state variable "count" and a function setCount to modify the variable  
   const [count, setCount] = useState(0);

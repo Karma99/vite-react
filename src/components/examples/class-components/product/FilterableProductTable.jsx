@@ -28,7 +28,7 @@ export default class FilterableProductTable extends React.Component {
     }
   
     render() {    
-      const codeFilePath =  new URL('/uploads/class-components/Search Product.zip', import.meta.url).href;
+      const codeFilePath =  new URL('../../../uploads/class-components/Search Product.zip', import.meta.url).href;
       
       return (
         <ExampleBody codeFilePath={codeFilePath}>

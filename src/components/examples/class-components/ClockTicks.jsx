@@ -31,7 +31,7 @@ export default class ClockTicks extends React.Component{
     }
 
     render(){
-        const codeFilePath = new URL("/uploads/class-components/ClockTicks.txt", import.meta.url).href;
+        const codeFilePath = new URL("../../../uploads/class-components/ClockTicks.txt", import.meta.url).href;
 
         return (
             <ExampleBody codeFilePath={codeFilePath} className="neonBg text-center">

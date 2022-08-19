@@ -37,7 +37,7 @@ function reducer(state, action) {
 /* Ref : https://overreacted.io/making-setinterval-declarative-with-react-hooks/ */
 export default function StopWatch(){
 
-  const codeFilePath = new URL("/uploads/hooks/StopWatch.txt", import.meta.url).href;
+  const codeFilePath = new URL("../../../uploads/hooks/StopWatch.txt", import.meta.url).href;
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const { centiseconds, seconds, minutes, hours, isRunning, isPaused } = state;
