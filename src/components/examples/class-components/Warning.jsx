@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
-
+import codeFilePath from "../../../uploads/class-components/Warning.txt";
+        
 function ListItem(props) {
     // Correct! There is no need to specify the key here:  
     return <li id={props.id}>{props.title} : {props.value}</li>;
 }
-
 
 function NumberList(props) 
 {
@@ -20,7 +20,6 @@ function NumberList(props)
         </ul>  
     );
 }
-
 
 function WarningBanner(props) {
    // Preventing Component from Rendering
@@ -49,7 +48,6 @@ function Dailog(props){
     );
 }
 
-
 export default class Warning extends React.Component{
 
     constructor(props){
@@ -64,10 +62,7 @@ export default class Warning extends React.Component{
         }));
     }
 
-    render(){
-        
-        const codeFilePath = "../../../src/uploads/class-components/Warning.txt";
-        
+    render(){    
         return (
             <ExampleBody codeFilePath={codeFilePath}>
                 {/* React Containment : without using props.children (Topic : Composition ) */}

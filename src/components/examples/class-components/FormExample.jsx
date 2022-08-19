@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
+import codeFilePath from "../../../uploads/class-components/Form.txt";
 
 // Using Controlled Components Technique (Except file)
 export default class FormExample extends React.Component{
@@ -70,8 +71,6 @@ export default class FormExample extends React.Component{
     }
     
     render(){
-
-        const codeFilePath = "../../../src/uploads/class-components/Form.txt";
 
         return (
             <ExampleBody codeFilePath={codeFilePath}>

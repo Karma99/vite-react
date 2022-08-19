@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
+import codeFilePath from "../../../uploads/hooks/Counter.txt";
 
 export default function Counter() {
     
-  const codeFilePath = "../../../src/uploads/hooks/Counter.txt";
-  
   // Declare a new state variable "count" and a function setCount to modify the variable  
   const [count, setCount] = useState(0);
 

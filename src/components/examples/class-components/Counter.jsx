@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
+import codeFilePath from "../../../uploads/class-components/Counter.txt";
 
 export default class Counter extends React.Component {
     
@@ -24,7 +25,6 @@ export default class Counter extends React.Component {
     }
   
     render() {
-      const codeFilePath = "../../../src/uploads/class-components/Counter.txt";
       console.log('Render: '+2); 
       return (
         <ExampleBody codeFilePath={codeFilePath}>

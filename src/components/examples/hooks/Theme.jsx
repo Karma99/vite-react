@@ -5,11 +5,11 @@ import {useTheme, PAGE_THEMES} from '../../../utils/ThemeProvider';
 
 export default function Theme(){
 
-    const codeFilePath = "../../../src/uploads/hooks/Theme.zip";
+    const codeFilePath =  new URL('/uploads/hooks/Theme.zip', import.meta.url).href;
+    
     const {setTheme}   = useTheme();
-
     const clickHandler = (newTheme) => setTheme(newTheme);
-
+   
     return (
         <ExampleBody codeFilePath={codeFilePath}>
             <Button variant="outline-primary"   className="me-3" onClick={() => clickHandler(PAGE_THEMES.primary)}> Blue </Button>

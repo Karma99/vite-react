@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 import ExampleBody from '../../../../utils/ExampleBody';
-
+     
 export default class FilterableProductTable extends React.Component {
     constructor(props) {
       super(props);
@@ -27,9 +27,8 @@ export default class FilterableProductTable extends React.Component {
       })
     }
   
-    render() {
-      
-      const codeFilePath = "../../../../src/uploads/class-components/Search Product.zip";
+    render() {    
+      const codeFilePath =  new URL('/uploads/class-components/Search Product.zip', import.meta.url).href;
       
       return (
         <ExampleBody codeFilePath={codeFilePath}>

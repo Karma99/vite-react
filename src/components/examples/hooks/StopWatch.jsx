@@ -2,6 +2,7 @@ import React, {useReducer} from "react";
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
 import useInterval from '../../../utils/useInterval';
+import codeFilePath from "../../../uploads/hooks/StopWatch.txt";
 
 const initialState = {
   isRunning: false,
@@ -36,9 +37,6 @@ function reducer(state, action) {
 
 /* Ref : https://overreacted.io/making-setinterval-declarative-with-react-hooks/ */
 export default function StopWatch(){
-
-  const codeFilePath = "../../../src/uploads/hooks/StopWatch.txt";
-
   const [state, dispatch] = useReducer(reducer, initialState);
   const { centiseconds, seconds, minutes, hours, isRunning, isPaused } = state;
   

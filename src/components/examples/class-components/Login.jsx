@@ -1,6 +1,8 @@
 import React from 'react';
 import ExampleBody from '../../../utils/ExampleBody';
 import Button from 'react-bootstrap/Button';
+import codeFilePath from "../../../uploads/class-components/Login.txt";
+
 
 function LoginButton(props) {
     
@@ -29,9 +31,6 @@ export default class Login extends React.Component{
     }
     
     render(){
-
-        const codeFilePath = "../../../src/uploads/class-components/Login.txt";
-
         return (
             <ExampleBody codeFilePath={codeFilePath}>
                 {this.state.isLoggedIn 

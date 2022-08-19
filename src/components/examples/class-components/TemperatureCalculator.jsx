@@ -49,8 +49,7 @@ export default class TemperatureCalculator extends React.Component{
     }
     
     render() {
-
-        const codeFilePath = "../../../src/uploads/class-components/Temperature Calculator.zip";
+        const codeFilePath =  new URL('/uploads/class-components/Temperature Calculator.zip', import.meta.url).href;
 
         const scale       = this.state.scale;
         const temperature = this.state.temperature;

@@ -14,10 +14,12 @@ export default function ImageSlider(props) {
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 {
                     props.sliderImages.map((item, index) => 
+                        
                         <Carousel.Item key={`slider-${index}`}>
+                            {/* import.meta.url is a native ESM feature that exposes the current module's URL  */}
                             <Image
                                 className="d-block w-100"
-                                src={'../src/assets/images/' + item.fileName}
+                                src={new URL('../assets/images/' + item.fileName, import.meta.url).href}
                                 alt={`Loading-${index}...`}
                                 style={{ maxHeight: "607px"}}
                             />
