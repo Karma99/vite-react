@@ -1,0 +1,123 @@
+.App-logo {
+  pointer-events: none;
+}
+
+.mt-7{
+  margin-top: 7rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scroll-progress{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 900;
+  margin-top:4.6rem;
+  height: 0.5rem!important;
+}
+
+.body-container{
+  margin-top: 6rem;
+}
+
+.breadcrumb-item > a{
+  text-decoration:none !important;
+}
+
+.code-block{
+  width:100%;
+  min-height: 660px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow:hidden;
+}
+
+.neonBg{
+  background-color: #212529!important;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;  
+}
+
+.flickerText{
+  animation: flicker 1.5s infinite alternate;
+}
+
+.pulsateText{
+  animation: pulsate 2s infinite alternate;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+  text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #0fa,
+    0 0 80px #0fa,
+    0 0 90px #0fa,
+    0 0 100px #0fa,
+    0 0 150px #0fa;
+  
+  }
+  
+  20%, 24%, 55% {        
+    text-shadow: none;
+  }    
+}
+
+/* Pulsate animation */
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+  0% {
+    /* Smaller blur radius */
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #0fa,
+      0 0 45px #0fa,
+      0 0 55px #0fa,
+      0 0 70px #0fa,
+      0 0 80px #0fa;
+  }
+}

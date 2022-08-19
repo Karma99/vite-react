@@ -1,0 +1,162 @@
+import React from 'react';
+
+const productOptions = [
+    { value: 'size', label: 'Size' },
+    { value: 'color', label: 'Color' },
+    { value: 'material', label: 'material' },
+    { value: 'weight', label: 'Weight' }
+];
+
+// Using Controlled Components Technique (Except file)
+export default class Form extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            productPic: "",
+            productName:"",
+            categoryName: "",
+            quantity: 0,
+            price:0.00,
+            productVariation: [],
+            description:"",
+            termsCondition: false,
+            status: "1"
+        };
+
+        this.productPicRef = React.createRef();
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    
+    handleInputChange(event) {
+        
+        // Destructuring assignment
+        const {name, value, type, checked, selectedOptions}  = event.target;
+        
+        let val;
+
+        if(type === 'checkbox')
+            val = checked;
+        else if(type === 'select-multiple')
+            val = Array.from(selectedOptions, option => option.value);
+        else if(type === 'file')
+            val = this.productPicRef.current.value;  // File Name with Path 
+        else
+            val = value;
+      
+        // Computed property names   
+        this.setState({
+            [name]: val    
+        });
+    }
+    
+    handleSubmit(event) {
+        event.preventDefault();
+        const formData = `
+            Category:       ${this.state.categoryName}
+            Product:        ${this.state.productName}
+            Variation:      ${this.state.productVariation}
+            Quantity:       ${this.state.quantity}
+            Price:          ${this.state.price}
+            Description:    ${this.state.description}
+            Product Picture:     ${ (this.state.productPic) ? this.productPicRef.current.files[0].name : ""}
+            Terms and Condition: ${this.state.termsCondition}
+            Status:              ${this.state.status}
+        `;
+
+        alert(formData);
+    }
+    
+    render(){
+        return (
+            <div className="container">
+                <form name="react-form" onSubmit={this.handleSubmit}>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="categoryName">Select Category:</label></div>
+                        <div className="col-75">
+                            <select name="categoryName" value={this.state.categoryName} onChange={this.handleInputChange}>
+                                <option value="">Please Select</option>            
+                                <option value="watch">Watch</option>
+                                <option value="shoe">Shoe</option>
+                                <option value="shirt">Shirt</option>
+                                <option value="mobile">Mobile</option>
+                            </select>
+                        </div>    
+                    </div>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="productName">Product Name:</label></div>
+                        <div className="col-75">
+                            <input name="productName" type="text" checked={this.state.productName} onChange={this.handleInputChange} />
+                        </div>    
+                    </div>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="productVariation">Select Variation:</label></div>
+                        <div className="col-75">
+                            <select name="productVariation" multiple={true} value={this.state.productVariation} onChange={this.handleInputChange}>
+                            {productOptions.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
+                                </option>
+                            ))}
+                            </select>              
+                        </div>
+                    </div>
+                    
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="quantity">Quantity:</label></div>
+                        <div className="col-75">
+                            <input name="quantity" type="number" checked={this.state.quantity} onChange={this.handleInputChange} />
+                        </div>    
+                    </div>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="price">Price:</label></div>
+                        <div className="col-75">
+                            <input name="price" type="text" checked={this.state.price} onChange={this.handleInputChange} />
+                        </div>    
+                    </div>
+                   
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="description">Description:</label></div>
+                        <div className="col-75">
+                            <textarea rows="6" name="description" value={this.state.description} onChange={this.handleInputChange} />
+                        </div>    
+                    </div>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="productPic">Product Picture:</label></div>
+                        <div className="col-75">
+                            <input name="productPic" type="file" ref={this.productPicRef} onChange={this.handleInputChange} />
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="termsCondition">Terms and Condition:</label></div>
+                        <div className="col-75">
+                            <input name="termsCondition" type="checkbox" checked={this.state.termsCondition} onChange={this.handleInputChange} />
+                        </div>    
+                    </div>
+
+                    <div className="row">
+                        <div className="col-25"><label htmlFor="Status">Status:</label></div>
+                        <div className="col-75">
+                            <input name="status" type="radio" value="1" checked={this.state.status === "1"} onChange={this.handleInputChange} /> Active
+                            <input name="status" type="radio" value="0" checked={this.state.status === "0"} onChange={this.handleInputChange} /> In-active
+                        </div>    
+                    </div>
+                    <br />
+                    <div className="row">
+                        <div className="col-75">
+                            <input type="submit" value="Submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        );
+    }
+}
