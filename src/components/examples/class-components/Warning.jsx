@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
-import codeFilePath from "../../../uploads/class-components/Warning.txt";
         
 function ListItem(props) {
     // Correct! There is no need to specify the key here:  
@@ -62,7 +61,9 @@ export default class Warning extends React.Component{
         }));
     }
 
-    render(){    
+    render(){   
+        const codeFilePath = new URL("/uploads/class-components/Warning.txt", import.meta.url).href;
+
         return (
             <ExampleBody codeFilePath={codeFilePath}>
                 {/* React Containment : without using props.children (Topic : Composition ) */}

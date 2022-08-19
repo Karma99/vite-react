@@ -1,6 +1,5 @@
 import React from 'react';
 import ExampleBody from '../../../utils/ExampleBody';
-import codeFilePath from "../../../uploads/class-components/ClockTicks.txt";
 
 function WelcomeMessage(props){
     return (
@@ -32,7 +31,8 @@ export default class ClockTicks extends React.Component{
     }
 
     render(){
- 
+        const codeFilePath = new URL("/uploads/class-components/ClockTicks.txt", import.meta.url).href;
+
         return (
             <ExampleBody codeFilePath={codeFilePath} className="neonBg text-center">
                 {/* React Containment : wrapping children elements (Topic : Composition ) */ }

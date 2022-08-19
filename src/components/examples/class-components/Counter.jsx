@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import ExampleBody from '../../../utils/ExampleBody';
-import codeFilePath from "../../../uploads/class-components/Counter.txt";
 
 export default class Counter extends React.Component {
     
@@ -25,7 +24,9 @@ export default class Counter extends React.Component {
     }
   
     render() {
-      console.log('Render: '+2); 
+      console.log('Render: '+2);
+      const codeFilePath = new URL("/uploads/class-components/Counter.txt", import.meta.url).href;
+      
       return (
         <ExampleBody codeFilePath={codeFilePath}>
         <p>You clicked <span className="text-danger">{this.state.count}</span> times.</p>

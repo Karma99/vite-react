@@ -1,7 +1,6 @@
 import React from 'react';
 import ExampleBody from '../../../utils/ExampleBody';
 import Button from 'react-bootstrap/Button';
-import codeFilePath from "../../../uploads/class-components/Toggle.txt";
 
 export default class Toggle extends React.Component{
     
@@ -18,6 +17,8 @@ export default class Toggle extends React.Component{
     }
     
     render() {
+        const codeFilePath = new URL("/uploads/class-components/Toggle.txt", import.meta.url).href;
+
         return (
             <ExampleBody codeFilePath={codeFilePath}>                      
                 <Button onClick={this.handleClick} variant={this.state.isToggleOn ? 'success' : 'danger'}>
